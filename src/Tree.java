@@ -19,12 +19,20 @@ public class Tree {
         this.n = n;
     }
 
-    public void read() {
+    private String converted() {
         StringBuilder out = new StringBuilder();
         for (int i = parsedTree.size() - 1; i > 0; i--) {
             out.append(parsedTree.get(i).get(n));
         }
-        System.out.println(out.toString());
+        return out.toString();
+    }
+
+    public void read() {
+        System.out.println(n + " written in base " + base + ": " + converted());
+        System.out.println("Tree: ");
+        print(tree);
+        System.out.println("Parsed Tree: ");
+        print(parsedTree);
     }
 
     /**
